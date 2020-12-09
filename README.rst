@@ -15,7 +15,7 @@ Functional requirements:
 
 * Gathered data are stored in JSON. Create a program, that will find this newly gathered data and save them to database.
 * Analytical tool will use MongoDB/Redis/ElasticSearch - **I am not sure which one I should choose. I will be very thankful if you helped me with this, because you definitely have more experience in this field. The crawler saves data in JSON format every day.**
-* Use Flask to build the website (**Also, if you have better option that could fit this task, please let me know**)
+* Use Flask to build the website (**Also, if you have better option that fits this task better, please let me know**)
 * User can filter a real estate agent by agent's name and he can show agent's history.
 * User can see historical data of estate agencies and their franchisors
 * Documentation would be focused more on how to use this tool then to its technical side. (**Please, let me know if it is a problem**)
