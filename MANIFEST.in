@@ -1,0 +1,2 @@
+graft scanbrokers/templates
+graft scanbrokers/static

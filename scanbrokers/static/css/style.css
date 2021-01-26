@@ -1,0 +1,41 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-family: 'Bowlby One SC', cursive;
+}
+
+a{
+    color: #292A73
+}
+
+h1 a{
+    color: #F7A400;
+    text-decoration: none;
+}
+
+.lead{
+    color: #1a1b4b;
+    margin-top: -15px;
+    font-size: 0.9em;
+}
+
+.links a{
+    font-size: 0.8em;
+    color: #3a9efd
+}
+
+.btn-primary{
+    background-color: #3a9efd;
+    border-color: #3a9efd;
+}
+
+h2{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+p{
+    font-size: 0.8em;
+}
