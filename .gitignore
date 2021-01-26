@@ -1,0 +1,8 @@
+/mindmap
+/data
+/__venv__
+.vscode
+.DS_Store
+dist
+.eggs
+*.egg-info
