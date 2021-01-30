@@ -38,15 +38,18 @@ def broker_detail(ic):
         flask.abort(404)
     return flask.render_template('broker_detail.html', title=f"Detail makléře {agent['name']}", agent=agent)
 
-@app.cli.command()
+@app.cli.command('reload-db')
 def reload_db():
+    """Custom command for reloading database."""
     reload_data()
 
 @app.errorhandler(404)
 def page_not_found(error):
+    """Not found page"""
     return flask.render_template('page_not_found.html', title="404")
 
 def create_app(*args, **kwargs):
+    """Flask app factory."""
     app = flask.Flask(__name__)
     with app.app_context():
         reload_data()

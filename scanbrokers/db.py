@@ -182,7 +182,7 @@ def get_db():
 
 
 def format_unixtime(unixtime):
-    """Transform unixtime to simple DATE format
+    """Transforms unixtime to simple DATE format
 
     :param unixtime: Unixtime
     :type: string
@@ -193,6 +193,14 @@ def format_unixtime(unixtime):
     return datetime.datetime.fromtimestamp(int(unixtime)).strftime('%Y-%m-%d')
 
 def get_year(unixtime):
+    """Tranforms unixtime to full year
+
+    :param unixtime: Unixtime
+    :type: string
+
+    :return: Returns full year from unixtime
+    :rtype: string    
+    """
     return datetime.datetime.fromtimestamp(int(unixtime)).strftime('%Y')
 
 if __name__ == '__main__':
