@@ -22,7 +22,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'flask',
-        'flask_httpauth'
+        'unidecode'
     ],
     classifiers=[
         'Framework :: Flask',
@@ -32,4 +32,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.9',
     ],
+    extras_require={
+        "test":  ["pytest>=5", "requests"],
+    }
 )
