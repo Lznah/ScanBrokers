@@ -1,1 +1,3 @@
-from .server import app
+from scanbrokers.server import create_app
+
+__all__ = ['create_app']

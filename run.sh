@@ -1,5 +1,5 @@
 #!/bin/bash
-export FLASK_APP=server.py
+export FLASK_APP='scanbrokers/server.py'
+export WEBSERVER_DATAPATH='./data/'
 export FLASK_DEBUG=1
-export JSON_DATA_FOLDER='./data/'
 flask run

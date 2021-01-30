@@ -4,21 +4,29 @@ body {
 
 h1{
     font-family: 'Bowlby One SC', cursive;
+    margin-top: 10px
 }
 
 a{
     color: #292A73
 }
 
+.logo{
+    height: 50px
+}
+
 h1 a{
     color: #F7A400;
+    font-size: 1.4em;
     text-decoration: none;
 }
 
 .lead{
-    color: #1a1b4b;
+    font-weight: bold;
+    color: #3a9efd;
     margin-top: -15px;
-    font-size: 0.9em;
+    font-size: 1em;
+    margin-bottom: 30px
 }
 
 .links a{
@@ -32,10 +40,37 @@ h1 a{
 }
 
 h2{
-    font-size: 1.5em;
+    font-size: 1.4em;
     text-align: center;
 }
 
 p{
     font-size: 0.8em;
+}
+
+#content{
+    min-height: 90vh;
+}
+
+#footer p{
+    margin: 0
+}
+
+#footer{
+    height: 5vh;
+}
+
+@media (min-width: 768px) {
+    #content{
+        min-height: 95vh;
+    }
+    .logo{
+        height: 150px
+    }
+    #footer div:first-child p{
+        text-align: left;
+    }
+    #footer div:last-child p{
+        text-align: right;
+    }
 }

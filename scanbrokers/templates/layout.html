@@ -8,40 +8,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="d-flex flex-column min-vh-100 justify-content-center">
+<body class="d-flex flex-column min-vh-100">
     <div class="container">
-        <div class="row justify-content-center mt-3">
-            <div class="col-12 text-center">
-                <h1 class="pt-5">
-                    <a href="/">ScanBrokers</a>
-                </h1>
-                <p class="lead">... your wettest dream comes true</p>
+        <div class="d-flex flex-column justify-content-center" id="content">
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <!-- Icon made by Freepik (https://www.freepik.com) from www.flaticon.com -->
+                    <img src="{{ url_for('static', filename='svg/spy.svg') }}" class="logo">
+                    <h1>
+                        <a href="/">ScanBrokers</a>
+                    </h1>
+                    <p class="lead">... your wettest dream comes true</p>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <form method="get" action="/search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="query">
+                            <button class="btn btn-primary" type="submit" id="inputGroupFileAddon04">Hledat</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             {% block content %}{% endblock %}
         </div>
-        <div class="row text-center justify-content-center">
-            <div class="col-md-4">
-                <form>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="query">
-                        <button class="btn btn-primary" type="button" id="inputGroupFileAddon04">Hledat</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4 text-left">
+        <div class="row justify-content-center" id="footer">
+            <div class="col-md-4 text-center">
                 <p>
                     &copy; Petr Hanzl 2020
                 </p>
             </div>
-            <div class="col-md-4">
-                <p style="text-align: right">
+            <div class="col-md-4 text-center">
+                <p>
                     <a href="docs/">Dokumentace</a> | <a href="https://github.com/Lznah/ScanBrokers">GitHub</a> | <a href="https://www.linkedin.com/in/petr-hanzl-68498669/">LinkedIn</a>
                 </p>
             </div>
@@ -49,7 +53,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>

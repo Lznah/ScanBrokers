@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container align-self-center">
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-4">
+            <h2 class="text-center">{{ agent['name'] }} (IČ: {{ agent['ic'] }})</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 pb-5">
+            <table class="table" id="agency_table">
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        data = {{ agent | safe }}
+    </script>
+</div>
+{% endblock %}

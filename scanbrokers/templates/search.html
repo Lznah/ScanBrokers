@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container align-self-center">
+    {% if len > 0 %}
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="text-center">Nalezení makléři se jménem "{{ query }}"</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 pb-5">
+            <p class="text-center"> 
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Jméno</th>
+                            <th scope="col">IČ</th>
+                            <th scope="col">Odkaz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {%for i in range(0, len)%} 
+                        <tr>
+                            <th scope="row">{{ i+1 }}</th>
+                            <td>{{ agents[i]['name'] }}</td>
+                            <td>{{ agents[i]['ic'] }}</td>
+                            <td><a href="broker/{{ agents[i]['ic'] }}">Detail</a></td>
+                        </tr>
+                    {%endfor%} 
+                      </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+    {% elif number_of_letters > minimal_number_of_letters %}
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="text-center">Žádny makléř "{{query}}" v databázi neexistuje.</h2>
+        </div>
+    </div>
+    {% else %}
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-8 col-lg-8">
+            <h2 class="text-center">Hledané jméno musí obsahovat alespoň {{ minimal_number_of_letters }} znaky.</h2>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
