@@ -1,2 +1,1 @@
-graft scanbrokers/templates
-graft scanbrokers/static
+include LICENSE
