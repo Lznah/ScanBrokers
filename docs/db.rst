@@ -34,4 +34,3 @@ Database is supposted to be reloaded by CRON task every day at hour defined by `
 .. automodule:: scanbrokers.db
    :members:
    :undoc-members:
-   :show-inheritance:

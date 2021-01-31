@@ -6,8 +6,6 @@ import copy
 def create_app(*args, **kwargs):
     """Flask app factory."""
     app = flask.Flask(__name__)
-    with app.app_context():
-        get_db()
     return app
 
 app = create_app()
