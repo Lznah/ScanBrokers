@@ -29,7 +29,7 @@ def search():
     if number_of_letters >= minimal_number_of_letters:
         agents = find_agents_by_name(query)
     return flask.render_template('search.html',
-        title=f"Výsledky hledání pro 'query'", \
+        title=f"Výsledky hledání", \
         minimal_number_of_letters=minimal_number_of_letters, \
         number_of_letters=number_of_letters, \
         query=query, agents=agents, \
