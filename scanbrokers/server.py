@@ -52,7 +52,7 @@ def reload_db():
 @app.errorhandler(404)
 def page_not_found(error):
     """Not found page"""
-    return flask.render_template('page_not_found.html', title="404")
+    return flask.render_template('page_not_found.html', title="404"), 404
 
 def main():
     app.run()
