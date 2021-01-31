@@ -28,7 +28,7 @@ This is just a simple example of the database object structure.
 
 
 
-Database is supposted to be reloaded by CRON task every day at hour defined by ``HOUR_DATABASE_RELOAD`` environment variable. However, I was not able to implement a custom script command for already running Flask application. Reloadng is now done by simple restart of the server.
+Database is supposted to be reloaded by CRON task every day at hour defined by ``HOUR_DATABASE_RELOAD`` environment variable. However, I was not able to implement a custom script command for already running Flask application. Therefore, reloading of the database is now done by a simple restart of the server in user defined CRON job.
 
 .. automodule:: scanbrokers.db
    :members:

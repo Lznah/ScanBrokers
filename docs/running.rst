@@ -8,14 +8,6 @@ Open file ``./run.sh`` and set environment variables there.
 Environment variables
 ---------------------
 
-This is a list of environment variables, that you need to editor in ``./run.sh`` file before running.
-# path to flask app
-export FLASK_APP='scanbrokers/server.py'
-# path to json data folder
-export WEBSERVER_DATAPATH='./data/'
-# run in debug mode? Yes - 1; No - 0
-export FLASK_DEBUG=1
-
 +--------------+--------------------------------------------------------------------------------------------+
 | ``FLASK_APP`` | An absolute or relative path to flask application, where is create_app factory defined    |
 +--------------+--------------------------------------------------------------------------------------------+
