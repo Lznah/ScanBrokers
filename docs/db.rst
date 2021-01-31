@@ -7,7 +7,7 @@ This database is basically an aggregation of JSON objects, that are stored in a 
 
 This preprocessing here is meant as preprocessing of queries lately requested in Flask routes. I decided for this query preprocessing, because the server updates data only once in a day and this can be done during night. Because of that, the response of webserver to a query is super fast.
 
-Unfortunately, I have discoved, that this does not work as I expected. The application context works a bit different and there is a new context with each request, not with the start of the application.
+Unfortunately, I have discoved, that this does not work as I expected. The application context works a bit different and there is a new context with each request, not with the start of the application. Because of that, there is currently no need to set up cron task for restarting the server.
 
 Database Object Structure
 -------------------------
