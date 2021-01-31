@@ -38,6 +38,6 @@ setup(
         ],
     },
     extras_require={
-        "test":  ["pytest>=5", "requests"],
+        "test":  ["pytest>=5"],
     }
 )
