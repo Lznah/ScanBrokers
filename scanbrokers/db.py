@@ -35,7 +35,6 @@ def reload_data(data = {
     for filename in list_new_data:
         data['json_files'][filename] = list_new_data[filename]
         preprocess_queries(data, filename)
-        break
     for error in errors:
         flask.app.logger.warning(error)
     return data
