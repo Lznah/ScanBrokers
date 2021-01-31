@@ -1,0 +1,62 @@
+{
+    "1": {
+            "name": "Testing agency 1",
+            "address": "Testing address 1",
+            "estates_count": 200,
+            "branches": [
+                {
+                    "name": "Testing branch 1",
+                    "address": "Testing address branch 1",
+                    "estates_count": 100,
+                    "agents": [
+                        {"ic": "0000001", "name": "Testing agent 1", "estates_count": 0}
+                    ]
+                },
+                {
+                    "name": "Testing branch 2",
+                    "address": "Testing address branch 2",
+                    "estates_count": 100,
+                    "agents": [
+                        {"ic": "0000003", "name": "Testing agent 4", "estates_count": 0}
+                    ]
+                }
+           ]
+    },
+    "2": {
+        "name": "Testing agency 2",
+        "address": "Testing address 2",
+        "estates_count": 50,
+        "branches": [
+            {
+                "name": "Testing branch 3",
+                "address": "Testing address branch 4",
+                "estates_count": 50,
+                "agents": [
+                    {"ic": "0000002", "name": "Testing agent 3", "estates_count": 0}
+                ]
+            },
+            {
+                "name": "Testing branch 2",
+                "address": "Testing address branch 2",
+                "estates_count": 0,
+                "agents": [
+                    {"ic": "new-agent", "name": "New agent 1", "estates_count": 0}
+                ]
+            }
+       ]
+    },
+    "3": {
+        "name": "Testing agency 3",
+        "address": "Testing address 3",
+        "estates_count": 50,
+        "branches": [
+            {
+                "name": "Testing branch 5",
+                "address": "Testing address branch 5",
+                "estates_count": 50,
+                "agents": [
+                    {"ic": "new-agent-2", "name": "New agent 2", "estates_count": 0}]
+            }
+       ]
+    }
+}
