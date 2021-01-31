@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open('README.rst') as f:
     long_description = ''.join(f.readlines())
@@ -32,6 +32,11 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.9',
     ],
+    entry_points={
+        'console_scripts': [
+            'scanbrokers = scanbrokers:main',
+        ],
+    },
     extras_require={
         "test":  ["pytest>=5", "requests"],
     }

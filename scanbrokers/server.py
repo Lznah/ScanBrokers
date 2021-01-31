@@ -1,6 +1,6 @@
 import flask
 import os
-from .db import reload_data, get_db, find_agents_by_name, find_agent_by_ic
+from .db import get_db, find_agents_by_name, find_agent_by_ic
 import copy
 
 app = flask.Flask(__name__)
@@ -40,9 +40,10 @@ def broker_detail(ic):
 
 @app.cli.command('reload-db')
 def reload_db():
-    """Custom command for reloading database."""
-    reload_data()
-
+    """Custom command for reloading database. **Not working yet**
+    """
+    reload_data(get_db())
+    
 @app.errorhandler(404)
 def page_not_found(error):
     """Not found page"""
@@ -52,8 +53,8 @@ def create_app(*args, **kwargs):
     """Flask app factory."""
     app = flask.Flask(__name__)
     with app.app_context():
-        reload_data()
+        get_db()
     return app
 
-if __name__ == '__main__':
-    app = create_app()
+def main():
+    app.run()

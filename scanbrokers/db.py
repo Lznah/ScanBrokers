@@ -6,29 +6,29 @@ import flask
 
 ENVVAR_DATAPATH = 'WEBSERVER_DATAPATH'
 
-def reload_data(path, data = {
+def reload_data(data = {
         'json_files' : {},
         'agents': {}
     }):
     """Process new data into existing data object
 
-    :param path: New json that needs to be applied on existing data
-    :type path: dictionary
-
     :param data: Dictionary of already loaded json files
     :type data: dictionary
-
-    :param app: Flask app
-    :type app: Flask app object
 
     :raises FileNotFoundError: Raises exception if provided path does not exist
 
     :return: Returns dictionary of loadeded files and preprocessed cached data
     """
+    if ENVVAR_DATAPATH not in os.environ:
+        flask.current_app.logger.critical(f'Missing path to data folder in environment value: {ENVVAR_DATAPATH}')
+        exit(1)
+    path = os.environ[ENVVAR_DATAPATH]
+
     abs_path = os.path.join(os.getcwd(), path)
     if not os.path.exists(abs_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
+    print(data.keys())
     previous_files = data['json_files'].keys()
     json_files = [json_file for json_file in os.listdir(abs_path) if json_file.endswith('.json')]
     new_files = [json_file for json_file in json_files if json_file not in previous_files]
@@ -173,13 +173,9 @@ def get_db():
     :return: Database dictionary or loaded files and preprocessed queries
     :rtype: dictionary
     """
-    if ENVVAR_DATAPATH not in os.environ:
-        app.logger.critical(f'Missing path to data folder in environment value: {ENVVAR_DATAPATH}')
-        exit(1)
     if 'db' not in flask.g:
-        flask.g.db = reload_data(os.environ[ENVVAR_DATAPATH])
+        flask.g.db = reload_data()
     return flask.g.db
-
 
 def format_unixtime(unixtime):
     """Transforms unixtime to simple DATE format
