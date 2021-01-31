@@ -27,3 +27,28 @@ Alternatively, you can run the server as a module, but you need to define at lea
 .. code-block:: console
 
     python -m scanbrokers
+
+
+Run with WSGI
+-------------
+
+An example of `.wsgi` that was used on my private server. Also this server hosts domain http://scanbrokers.eu
+
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+
+    import sys
+    import site
+    import os
+
+    # connect to virtualenv
+    site.addsitedir('/var/www/your_domain/__venv__/lib/your_python_version/site-packages')
+
+    sys.path.insert(0, '/var/www/your_domain/')
+
+    # I know, this is not very nice, but it works
+    os.environ['WEBSERVER_DATAPATH'] = 'path_to_your_data'
+
+    from scanbrokers import app as application
