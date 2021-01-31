@@ -3,7 +3,14 @@ import os
 from .db import get_db, find_agents_by_name, find_agent_by_ic
 import copy
 
-app = flask.Flask(__name__)
+def create_app(*args, **kwargs):
+    """Flask app factory."""
+    app = flask.Flask(__name__)
+    with app.app_context():
+        get_db()
+    return app
+
+app = create_app()
 
 @app.route('/')
 def index():
@@ -43,18 +50,11 @@ def reload_db():
     """Custom command for reloading database. **Not working yet**
     """
     reload_data(get_db())
-    
+
 @app.errorhandler(404)
 def page_not_found(error):
     """Not found page"""
     return flask.render_template('page_not_found.html', title="404")
-
-def create_app(*args, **kwargs):
-    """Flask app factory."""
-    app = flask.Flask(__name__)
-    with app.app_context():
-        get_db()
-    return app
 
 def main():
     app.run()

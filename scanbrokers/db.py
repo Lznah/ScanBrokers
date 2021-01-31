@@ -28,7 +28,6 @@ def reload_data(data = {
     if not os.path.exists(abs_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
-    print(data.keys())
     previous_files = data['json_files'].keys()
     json_files = [json_file for json_file in os.listdir(abs_path) if json_file.endswith('.json')]
     new_files = [json_file for json_file in json_files if json_file not in previous_files]
@@ -165,7 +164,6 @@ def find_agent_by_ic(ic):
     if ic not in db['agents'].keys():
         return None
     return db['agents'][ic]
-
 
 def get_db():
     """Function to retrieve in-memory database
